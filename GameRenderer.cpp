@@ -1,7 +1,6 @@
 /// \file gamerenderer.cpp
 /// \brief Direct3D rendering tasks for the game.
-/// DirectX stuff that won't change much is hidden away in this file
-/// so you won't have to keep looking at it.
+
 
 #include <algorithm>
 
