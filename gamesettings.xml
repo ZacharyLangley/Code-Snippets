@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Settings for Tanks -->
+
+<settings>
+
+  <!-- general settings -->
+
+
+  <game name="Tanks!"/>
+
+  <!-- renderer settings -->
+
+
+  <renderer shadermodel="5_0" height="768" width="1024"/>
+
+  <!-- image file names -->
+
+  <images>
+ 
+    <image src="Images\Backgrounds\start.png"/> 
+    <image src="Images\Backgrounds\background_01.png"/>
+    <image src="Images\Backgrounds\background_03.png"/>
+    <image src="Images\Backgrounds\background_02.png"/>
+    <image src="Images\Backgrounds\background_04.png"/>
+    <image src="Images\Floor1.png" />
+    <image src="Images\black.png"/>    
+    <image src="Images\Backgrounds\menu.png"/>
+
+
+  </images>
+
+  <sprites>
+    
+    <sprite name="tank_1" frames="15" ext="png" file="Images\Tanks\tank_1\tank1_"/>
+    <sprite name="tank_4" frames="15" ext="png" file="Images\Tanks\tank_4\tank4_"/>
+    <sprite name="barrel_green" frames="1" ext="png" file="Images\Tanks\T_barrel_1\tanks_barrel_1_green"/>
+    <sprite name="barrel_orange" frames="1" ext="png" file="Images\Tanks\T_barrel_1\tanks_barrel_1_orange"/>
+
+    <sprite name="victory_p1" frames="1" ext="png" file="Images\Backgrounds\victory_p1"/>
+    <sprite name="victory_p2" frames="1" ext="png" file="Images\Backgrounds\victory_p2" />
+    
+    <sprite name="platform" frames="1" ext="png" file="Images\platform"/>
+    
+    <sprite name="goldBullet" frames="1" ext="png" file="Images\Weapons\goldBullet"/>
+    <sprite name="silverBullet" frames="1" ext="png" file="Images\Weapons\silverBullet"/>
+    <sprite name="seedBullet" frames="1" ext="png" file="Images\Weapons\seedBullet"/>
+    <sprite name="nukeBullet" frames="1" ext="png" file="Images\Weapons\nukeBullet"/>
+
+
+    <sprite name="tile_flat" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_flat"/>
+
+    <sprite name="tile_med_LBegin" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_med_LBegin"/>
+    <sprite name="tile_med_RBegin" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_med_RBegin"/>
+    <sprite name="tile_med_LEnd" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_med_LEnd"/>
+    <sprite name="tile_med_REnd" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_med_REnd"/>
+
+    
+    <sprite name="tile_connectR" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_connectR"/>
+    <sprite name="tile_connectL" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_connectL"/>
+
+    <sprite name="tile_tallR" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_tall_R"/>
+    <sprite name="tile_tallL" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_tall_L"/>
+
+    <sprite name="tile_dirt" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_dirt"/>
+    <sprite name="tile_mound" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_mound"/>
+    <sprite name="tile_lava" frames="1" ext="png" file="Images\Tiles\tileset_01\tile_lava"/>
+
+    <sprite name="menu" frames="1" ext="png" file="Images\Backgrounds\menu"/>
+    <sprite name="splash" frames="1" ext="png" file="Images\Backgrounds\start"/>
+    <sprite name="instruct" frames="1" ext="png" file="Images\Backgrounds\instruct"/>
+
+    <sprite name="hud" frames="1" ext="png" file="Images\hud"/>
+    <sprite name="endTurn" frames="1" ext="png" file="Images\GUI\endTurn"/>
+    <sprite name="start" frames="1" ext="png" file="Images\startButton"/>
+    <sprite name="currTank" frames="1" ext="png" file="Images\HUD\currTank"/>
+    <sprite name="arrowUp" frames="1" ext="png" file="Images\GUI\arrowUp"/>
+    <sprite name="arrowDown" frames="1" ext="png" file="Images\GUI\arrowDown"/>
+    <sprite name="explosion" frames="9" ext="png" file="Images\Weapons\explosion"/>
+    <sprite name="dirtExplosion" frames="9" ext="png" file="Images\Weapons\dirt_explosion"/>
+
+
+  </sprites>
+
+
+  <objects>
+    <object name="explosion" animation="0,1,2,3,4,5,6,7,8,9" cycle="1" fly="0" grounded="1" frameinterval="225" lifetime="1100"/>
+    <object name="dirtExplosion" animation="0,1,2,3,4,5,6,7,8,9" cycle="1" fly="1" grounded="1" frameinterval="225" lifetime="1100"/>
+
+    <object name="tank_1" animation="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" cycle="1" fly="0" grounded="1" frameinterval="400" maxyspeed="4" minyspeed="-4" maxxspeed="-1" minxspeed="-10"/>
+    <object name="tank_4" animation="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" cycle="1" fly="0" grounded="1" frameinterval="400" maxyspeed="4" minyspeed="-4" maxxspeed="-1" minxspeed="-10"/>
+
+
+    <object name="platform" animation="0" cycle="0" fly="1" />
+    <object name="menu" animation="0" cycle="1" fly="1"/>
+    <object name="instruct" animation="0" cycle="1" fly="1"/>
+
+    <object name="victory_p1" animation="0" cycle="1" fly="1" />
+    <object name="victory_p2" animation="0" cycle="1"  fly="1" />
+
+    <object name="goldBullet" animation="0" cycle="1" fly="0" lifetime="6000"/>
+    <object name="silverBullet" animation="0" cycle="1" fly="0" lifetime="6000"/>
+    <object name="seedBullet" animation="0" cycle="1" fly="0" lifetime="6000"/>
+    <object name="nukeBullet" animation="0" cycle="1" fly="0" lifetime="6000"/>
+
+
+    <object name="endTurn" animation="0" cycle="0" fly="1" />
+
+  </objects>
+
+  <sounds>
+
+    <sound file="Sounds\caw.wav" instances="4"/>
+
+    <sound file="Sounds\gun.wav" instances="4"/>
+
+    <sound file="Sounds\boom.wav" instances="4"/>
+
+    <sound file="Sounds\thump.wav" instances="4"/>
+
+    <sound file="Sounds\move.wav"/>
+
+    <sound file="Sounds\stings.wav" instances="2"/>
+
+    <sound file="Sounds\smarts.wav"/>
+    
+    <!-- Background Music for Jukebox-->
+    
+    <sound file="Sounds\PocketTanksTribute.wav"/>
+
+    <sound file="Sounds\Ride.wav"/>
+
+    <sound file="Sounds\ANinjaAmongOscillators.wav"/>
+
+    <sound file="Sounds\Neoakushon.wav"/>
+
+    <sound file="Sounds\Neoishiki.wav"/>
+
+    <!-- Winning Music -->
+    <sound file="Sounds\TaDa.wav"/>
+
+    <sound file="Sounds\FireCrackers.wav"/>
+  
+  </sounds>
+
+
+  <instances> </instances>
+
+  <!-- debugger settings -->
+
+
+
+  <debug header="1" linenumber="1">
+
+    <file name="debug.txt" select="1"/>
+
+    <debugger select="1"/>
+
+    <ip select="1" port="1617" address="127.0.0.1"/>
+
+  </debug>
+
+</settings>
