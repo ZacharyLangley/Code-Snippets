@@ -98,8 +98,6 @@ void CGameRenderer::checkMenuCollision(int x, int y) {
 					g_pSoundManager->volume(1);
 					sound = TRUE;
 				}
-
-				//do stuff
 			}
 		}
 
@@ -202,21 +200,13 @@ void CGameRenderer::DrawBackground(float x){
   //draw floor
   if(g_bWireFrame)
     m_pDC2->PSSetShaderResources(0, 1, &m_pWireframeTexture); //set wireframe texture
- // else
-   // m_pDC2->PSSetShaderResources(0, 1, &m_pFloorTexture); //set floor texture
-  
+ 
   SetWorldMatrix(Vector3(fQuantizeX, 0, 0));
   
 
   constantBufferData.wvp = CalculateWorldViewProjectionMatrix();
   m_pDC2->UpdateSubresource(m_pConstantBuffer, 0, nullptr, &constantBufferData, 0, 0);
   m_pDC2->VSSetConstantBuffers(0, 1, &m_pConstantBuffer);
-  //m_pDC2->Draw(4, 0);
-
-  //SetWorldMatrix(Vector3(fQuantizeX, 0, 3000));
-
-
-
 
   constantBufferData.wvp = CalculateWorldViewProjectionMatrix();
   m_pDC2->UpdateSubresource(m_pConstantBuffer, 0, nullptr, &constantBufferData, 0, 0);
@@ -264,7 +254,6 @@ void CGameRenderer::DrawBackground(float x){
   constantBufferData.wvp = CalculateWorldViewProjectionMatrix();
   m_pDC2->UpdateSubresource(m_pConstantBuffer, 0, nullptr, &constantBufferData, 0, 0);
   m_pDC2->VSSetConstantBuffers(0, 1, &m_pConstantBuffer);
-// m_pDC2->Draw(4, 2);
 } //DrawBackground
  
 /// Load the background and sprite textures.
@@ -273,10 +262,8 @@ void CGameRenderer::LoadTextures(){
   //background
 	int i = rand() % 5 + (1);
 	LoadTexture(m_pMenuTexture, g_cImageFileName[0]);
-	//LoadTexture(m_pWallTexture, g_cImageFileName[]);
-    LoadTexture(m_pWireframeTexture, g_cImageFileName[6]);
+        LoadTexture(m_pWireframeTexture, g_cImageFileName[6]);
 	LoadTexture(m_pSPMenuTexture, g_cImageFileName[1]);
-	//LoadTexture(m_pFloorTexture, g_cImageFileName[8]);
  //black for wireframe
 
   //sprites
@@ -396,10 +383,7 @@ void CGameRenderer::DrawHUD(char* text0, char* text1, char* text2, char* text3){
   //
   //switch to orthographic projection
   XMMATRIX tempProj = m_matProj;
-//  m_matProj = XMMatrixOrthographicOffCenterLH(-w, w, -h, h, 1.0f, 10000.0f);
- // m_matWorld = XMMatrixIdentity();
-//  m_matView = XMMatrixLookAtLH(Vector3(w, h, 0), Vector3(w, h, 1000.0f), Vector3(0, 1, 0));
-  
+
   ///clear the depth buffer
   m_pDC2->ClearDepthStencilView(m_pDSV, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
@@ -502,10 +486,6 @@ void CGameRenderer::DrawHUD(char* text0, char* text1, char* text2, char* text3){
 	  //////////////////////////////////////////////////////////////
 
   }
- 
-
-  //draw the text
-	//DrawHUDText(temp, p + Vector3(32.0f, 0.0f, -10.0f)); 
   
   //back to perspective projection 
   m_matProj = tempProj;
@@ -566,7 +546,7 @@ void CGameRenderer::ComposeFrame(){
   Tank* p2 = g_cObjectManager.GetPlayerObjectByTypePtr(PLAYER_TWO);
 
   char buffer0[256], buffer1[256], buffer2[256], buffer3[256];
-  //sprintf_s(buffer0, "Varmints %d", g_cObjectManager.varmints());
+
   if (p) {
 		  sprintf_s(buffer0, "Health:%d", p1->health);
 		  sprintf_s(buffer1, "Energy:%d", p1->energy);
